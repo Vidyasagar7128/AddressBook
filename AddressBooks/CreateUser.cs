@@ -4,12 +4,13 @@ using System.Text;
 
 namespace AddressBooks
 {
+
     class CreateUser
     {
         public Dictionary<String, User> cust = new Dictionary<String, User>();
-        public void AddUser()
+        public User AddUser()
         {
-            Console.Write("Enter First Name : ");
+            Console.Write("Enter First Name(Username) : ");
             String fname = Console.ReadLine();
             Console.Write("Enter Last Name : ");
             String lname = Console.ReadLine();
@@ -40,12 +41,15 @@ namespace AddressBooks
             if (this.cust.ContainsKey(user.firstName))
             {
                 Console.WriteLine("Already Exist..!");
+                this.cust[user.firstName] = user;
             }
             else
             {
                 this.cust.Add(user.firstName, user);
-                Console.WriteLine("Created Successfully..!");
+                Console.WriteLine();
+                Console.WriteLine("Created Succesfully..!");
             }
+            return user;
         }
     }
 }
