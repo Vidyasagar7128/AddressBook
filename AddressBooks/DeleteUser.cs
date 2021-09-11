@@ -6,18 +6,21 @@ namespace AddressBooks
 {
     class DeleteUser
     {
-        public Dictionary<String, User> Delete(Dictionary<String,User> dict, String a)
+        public void Delete(Dictionary<String,User> dict, String a)
         {
-            if (dict.ContainsKey(a))
-            {
-                dict.Remove(a);
-                Console.WriteLine($"Address Deleted Succesfully.! by {a}");
-            }
-            else
-            {
-                Console.WriteLine($"{a} Username is Incorrect.!");
-            }
-            return dict;
+            Console.WriteLine($"Address Deleted Succesfully.! by {a}");
+            Console.WriteLine($"Address Deleted Succesfully.! by {dict.ContainsKey(a)}");
+            //Dictionary<String, User> dicts = dict;
+            //if (dicts.ContainsKey(a))
+            //{
+            //    dicts.Remove(a);
+            //    Console.WriteLine($"Address Deleted Succesfully.! by {a}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"{a} Username is Incorrect.!");
+            //}
+            //return dicts;
         }
     }
 }

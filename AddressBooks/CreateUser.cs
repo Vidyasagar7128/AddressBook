@@ -8,7 +8,7 @@ namespace AddressBooks
     class CreateUser
     {
         public Dictionary<String, User> cust = new Dictionary<String, User>();
-        public User AddUser()
+        public User AddUser(Dictionary<String,User> users)
         {
             Console.Write("Enter First Name(Username) : ");
             String fname = Console.ReadLine();
@@ -38,17 +38,30 @@ namespace AddressBooks
                 mobile = mobile,
                 email = email
             };
-            if (!this.cust.ContainsKey(fname))
+            if (!users.ContainsKey(fname))
             {
                 this.cust.Add(user.firstName, user);
                 Console.WriteLine();
                 Console.WriteLine("Created Succesfully..!");
+                Console.WriteLine($"Address Created by {user.firstName} Username");
             }
             else
             {
-                Console.WriteLine("Already Exist..!");
+                throw new ArgumentException($"Already Exist.!");
             }
             return user;
         }
     }
 }
+
+//if (!users.ContainsKey(fname))
+//{
+//    this.cust.Add(user.firstName, user);
+//    Console.WriteLine();
+//    Console.WriteLine("Created Succesfully..!");
+//    Console.WriteLine($"Address Created by {user.firstName} Username");
+//}
+//else
+//{
+//    throw new ArgumentException($"Already Exist.!");
+//}

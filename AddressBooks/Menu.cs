@@ -18,12 +18,8 @@ namespace AddressBooks
                 case 1:
                     Console.WriteLine("Create Address : ");
                     CreateUser createUser = new CreateUser();
-                    User usr = createUser.AddUser();
+                    User usr = createUser.AddUser(this.cust);
                     this.cust.Add(usr.firstName, usr);
-                    foreach (KeyValuePair<String, User> i in this.cust)
-                    {
-                        Console.WriteLine($"Address created by {i.Value.firstName} name");
-                    }
                     ShowResults();
                     break;
                 case 2:

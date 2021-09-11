@@ -6,6 +6,7 @@ namespace AddressBooks
 {
     class EditUser
     {
+        String name = "";
         public User Edit(Dictionary<String, User> user,String key)
         {
             Console.Write("Update First Name : ");
@@ -45,12 +46,12 @@ namespace AddressBooks
                 user[key] = usr;
                 Console.WriteLine();
                 Console.WriteLine("Updated Succesfully..!");
-                Console.WriteLine($"Hey! {key} your current Username is {usr.firstName}.");
+                Console.WriteLine($"Hey! {key} your Username Could not be change");
             }
             Console.WriteLine("--------------------------------------------------------------------------------------------------");
             foreach (KeyValuePair<String, User> i in user)
             {
-                Console.WriteLine($"Updates : {i.Value.firstName},{i.Value.lastName},{i.Value.address},{i.Value.city},{i.Value.state},{i.Value.zip},{i.Value.mobile},{i.Value.email}");
+                Console.WriteLine($"{i.Value.firstName},{i.Value.lastName},{i.Value.address},{i.Value.city},{i.Value.state},{i.Value.zip},{i.Value.mobile},{i.Value.email}");
                 Console.WriteLine("--------------------------------------------------------------------------------------------------");
             }
             return usr;
