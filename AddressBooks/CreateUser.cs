@@ -38,16 +38,15 @@ namespace AddressBooks
                 mobile = mobile,
                 email = email
             };
-            if (this.cust.ContainsKey(user.firstName))
-            {
-                Console.WriteLine("Already Exist..!");
-                this.cust[user.firstName] = user;
-            }
-            else
+            if (this.cust.ContainsKey(fname))
             {
                 this.cust.Add(user.firstName, user);
                 Console.WriteLine();
                 Console.WriteLine("Created Succesfully..!");
+            }
+            else
+            {
+                Console.WriteLine("Already Exist..!");
             }
             return user;
         }

@@ -7,17 +7,18 @@ namespace AddressBooks
     class Menu
     {
         Dictionary<String, User> cust = new Dictionary<String, User>();
-        CreateUser createUser = new CreateUser();
+        
         public void ShowResults()
         {
             Console.WriteLine();
-            Console.WriteLine("(1). Create Address, (2). Update Address, (3). Address Details");
+            Console.WriteLine("(1). Create Address, (2). Update Address, (3). Delete Address, (4).Details Address");
             int number = int.Parse(Console.ReadLine());
             switch (number)
             {
                 case 1:
                     Console.WriteLine("Create Address : ");
-                    User usr = this.createUser.AddUser();
+                    CreateUser createUser = new CreateUser();
+                    User usr = createUser.AddUser();
                     this.cust.Add(usr.firstName, usr);
                     foreach (KeyValuePair<String, User> i in this.cust)
                     {
@@ -32,8 +33,14 @@ namespace AddressBooks
                     editUser.Edit(this.cust, u);
                     ShowResults();
                     break;
-                
                 case 3:
+                    Console.Write("Enter Username which you want to Delete : ");
+                    String a = Console.ReadLine();
+                    DeleteUser deleteUser = new DeleteUser();
+                    deleteUser.Delete(this.cust, a);
+                    ShowResults();
+                    break;
+                case 4:
                     Console.WriteLine("User Details : ");
                     ShowUsers showUsers = new ShowUsers();
                     showUsers.show(this.cust);
