@@ -38,7 +38,7 @@ namespace AddressBooks
                 mobile = mobile,
                 email = email
             };
-            if (this.cust.ContainsKey(fname))
+            if (!this.cust.ContainsKey(fname))
             {
                 this.cust.Add(user.firstName, user);
                 Console.WriteLine();
