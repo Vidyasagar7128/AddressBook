@@ -39,14 +39,15 @@ namespace AddressBooks
             };
             if (user.ContainsKey(usr.firstName))
             {
-                Console.WriteLine("Already Exist..!");
+                Console.WriteLine();
+                Console.WriteLine("Username Already Exist..!");
             }
             else
             {
                 user[key] = usr;
                 Console.WriteLine();
                 Console.WriteLine("Updated Succesfully..!");
-                Console.WriteLine($"Hey! {key} your Username Could not be change");
+                Console.WriteLine($"Hey! {usr.firstName} your Firstname/Username Could not be change at functional Level.");
             }
             Console.WriteLine("--------------------------------------------------------------------------------------------------");
             foreach (KeyValuePair<String, User> i in user)
