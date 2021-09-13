@@ -37,17 +37,16 @@ namespace AddressBooks
                 mobile = mobile,
                 email = email
             };
-            if (user.ContainsKey(usr.firstName))
-            {
-                Console.WriteLine();
-                Console.WriteLine("Username Already Exist..!");
-            }
-            else
+            if (user.ContainsKey(key))
             {
                 user[key] = usr;
                 Console.WriteLine();
                 Console.WriteLine("Updated Succesfully..!");
-                Console.WriteLine($"Hey! {usr.firstName} your Firstname/Username Could not be change at functional Level.");
+                Console.WriteLine($"Hey! {key} your current Username is {usr.firstName}.");
+            }
+            else
+            {
+                Console.WriteLine("Not Found!");
             }
             Console.WriteLine("--------------------------------------------------------------------------------------------------");
             foreach (KeyValuePair<String, User> i in user)

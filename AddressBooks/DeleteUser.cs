@@ -8,7 +8,6 @@ namespace AddressBooks
     {
         public Dictionary<String,User> Delete(Dictionary<String,User> dict, String a)
         {
-
             if (dict.ContainsKey(a))
             {
                 dict.Remove(a);
